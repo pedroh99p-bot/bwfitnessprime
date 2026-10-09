@@ -39,7 +39,7 @@ export default function SpecialistsShowcase() {
                 {coach.photo ? (
                   <Image
                     src={coach.photo}
-                    alt={`Retrato ilustrativo de ${coach.name}; semelhança a confirmar`}
+                    alt={coach.name}
                     fill
                     sizes="(min-width: 1024px) 30vw, 82vw"
                   />
@@ -51,27 +51,19 @@ export default function SpecialistsShowcase() {
                 )}
               </div>
               <div className="coach-info">
-                <span className="eyebrow">
-                  {coach.photo
-                    ? `${coach.name.toUpperCase()} • IMAGEM A VALIDAR`
-                    : `PERFIL A CONFIRMAR / 0${i + 1}`}
-                </span>
+                <span className="eyebrow">PERFIL A CONFIRMAR / 0{i + 1}</span>
                 <h3>
                   {coach.name}
                   <ArrowUpRight size={21} />
                 </h3>
                 <p className="small muted">{coach.role}</p>
-                {coach.badges.length > 0 && (
-                  <div className="tags">
-                    {coach.badges.map((badge) => (
-                      <span key={badge}>{badge}</span>
-                    ))}
-                  </div>
-                )}
+                <div className="tags">
+                  {coach.badges.map((badge) => (
+                    <span key={badge}>{badge}</span>
+                  ))}
+                </div>
                 <span className="small muted">
-                  {coach.photo
-                    ? "Retrato ilustrativo; semelhança a confirmar."
-                    : "Nome, imagem e informações a confirmar."}
+                  Especialidades ilustrativas, a confirmar
                 </span>
               </div>
             </button>
@@ -86,41 +78,22 @@ export default function SpecialistsShowcase() {
         {selected && (
           <>
             <div className="specialist-summary">
-              <div className="specialist-detail-photo">
-                {selected.photo ? (
-                  <Image
-                    src={selected.photo}
-                    alt={`Retrato ilustrativo de ${selected.name}; semelhança a confirmar`}
-                    fill
-                    sizes="100px"
-                  />
-                ) : (
-                  <MediaPlaceholder variant="portrait" label="[FOTO A CONFIRMAR]" />
-                )}
-              </div>
+              <MediaPlaceholder variant="portrait" label="[FOTO]" />
               <div>
-                <span className="eyebrow">
-                  {selected.photo ? selected.role.toUpperCase() : "PERFIL PROVISÓRIO"}
-                </span>
+                <span className="eyebrow">PERFIL PROVISÓRIO</span>
                 <h3>{selected.name}</h3>
                 <p className="muted">{selected.summary}</p>
-                {selected.cref && (
-                  <p className="small muted">CREF: {selected.cref}</p>
-                )}
+                <p className="small muted">
+                  CREF: {selected.cref || "a confirmar"}
+                </p>
               </div>
             </div>
-            <p className="small muted">
-              {selected.photo
-                ? "Imagem ilustrativa baseada em referência; validar semelhança antes da divulgação definitiva."
-                : "Nome, imagem, função e demais informações a confirmar."}
-            </p>
-            {selected.badges.length > 0 && (
-              <div className="tags">
-                {selected.badges.map((b) => (
-                  <span key={b}>{b}</span>
-                ))}
-              </div>
-            )}
+            <p className="small muted">Especialidades a confirmar</p>
+            <div className="tags">
+              {selected.badges.map((b) => (
+                <span key={b}>{b}</span>
+              ))}
+            </div>
             <ContactAction message={CONTACT_MESSAGES.team} className="w-full">
               Quero acompanhamento
             </ContactAction>
