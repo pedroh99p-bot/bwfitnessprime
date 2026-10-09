@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Container from "./layout/Container";
 import Button from "./ui/Button";
 import GoogleRating from "./ui/GoogleRating";
@@ -73,6 +74,15 @@ export default function HeroSection() {
           >
             <GoogleRating />
           </div>
+        </div>
+        <div className="hero-portrait">
+          <Image
+            src="/images/bw-prime/wellington-hero.webp"
+            alt="Retrato ilustrativo de Wellington, proprietário da BW Prime Fitness. Semelhança a confirmar."
+            fill
+            priority
+            sizes="(min-width: 1024px) 36vw, (min-width: 640px) 220px, 190px"
+          />
         </div>
         <div className="hero-side" aria-hidden="true">
           <span>FORÇA PARA O SEU DIA.</span>
