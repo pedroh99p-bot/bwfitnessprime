@@ -332,21 +332,6 @@ main[id] {
   padding-top: 142px;
   padding-bottom: 105px;
 }
-.hero-portrait {
-  position: relative;
-  align-self: flex-end;
-  flex: 0 0 190px;
-  width: 190px;
-  height: 238px;
-  margin-top: 18px;
-  margin-right: 55px;
-  margin-bottom: 72px;
-  transform: translateY(-32px);
-}
-.hero-portrait img {
-  object-fit: contain;
-  object-position: center bottom;
-}
 .hero-atmosphere {
   position: absolute;
   inset: 0;
@@ -959,12 +944,6 @@ main[id] {
 }
 .coach-photo {
   position: relative;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-}
-.coach-photo img {
-  object-fit: cover;
-  object-position: center top;
 }
 .coach-photo .media-placeholder {
   border: 0;
@@ -1736,21 +1715,6 @@ main[id] {
 .specialist-summary .media-placeholder {
   padding: 10px;
 }
-.specialist-detail-photo {
-  position: relative;
-  width: 100px;
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  border-radius: 8px;
-}
-.specialist-detail-photo img {
-  object-fit: cover;
-  object-position: center top;
-}
-.specialist-detail-photo .media-placeholder {
-  height: 100%;
-  padding: 8px;
-}
 .specialist-summary .media-label,
 .specialist-summary .media-status {
   display: none;
@@ -2022,25 +1986,11 @@ main[id] {
   }
   .hero-inner {
     min-height: 820px;
-    flex-direction: row;
-    align-items: center;
     padding-top: 160px;
     padding-bottom: 130px;
   }
-  .hero-copy {
-    flex: 1 1 auto;
-    min-width: 0;
-    z-index: 2;
-  }
-  .hero-portrait {
-    flex: 0 0 clamp(300px, 35vw, 465px);
-    width: clamp(300px, 35vw, 465px);
-    height: clamp(440px, 60vw, 650px);
-    margin: 0 45px 0 0;
-    transform: none;
-  }
   .hero h1 {
-    font-size: clamp(56px, 6.2vw, 88px);
+    font-size: clamp(80px, 8.3vw, 110px);
   }
   .hero-copy {
     max-width: 1000px;
