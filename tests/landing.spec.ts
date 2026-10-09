@@ -200,7 +200,10 @@ test("tabs, dialog focus, assistant, FAQ keyboard and IMC validation", async ({
     name: "Especialista BW",
     exact: true,
   });
-  await expect(sheet).toContainText("CREF: a confirmar");
+  await expect(
+    sheet.getByRole("img", { name: /Retrato ilustrativo de Wellington/ }),
+  ).toBeVisible();
+  await expect(sheet).not.toContainText("CREF");
   await page.screenshot({ path: "artifacts/qa/sheet-390.png" });
   for (let i = 0; i < 5; i++) {
     await page.keyboard.press("Tab");
